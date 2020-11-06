@@ -1,8 +1,12 @@
 # NIPS-2020-Paper-on-Anomaly-Detection
 A list of all papers related to anomaly detection in NeurIPS 2020.  
 
-A common findings from those papers – some anomaly detection models can assign low anomaly scores (thus fail to detect) certain anomalies. And a common explanation is that the features learned by such models are often *low-level* while the aforementioned anomalies often differ from normal data on *high-level*.
+A common finding from those papers – some anomaly detection models can assign low anomaly scores to (thus bias the detection performance on) certain anomalies (e.g. anomalies that the models haven't been trained on).   
 
+Common explanations:
+is that the features learned by such models are often *low-level* while the aforementioned anomalies often differ from normal data on *high-level*.
+
+## 1. Study of Performance Bias
 **Understanding Anomaly Detection with Deep Invertible Networks through Hierarchies of Distributions and Features** [[abs](https://arxiv.org/abs/2006.10848)][[pdf](https://arxiv.org/pdf/2006.10848.pdf)][[code](https://github.com/boschresearch/hierarchical_anomaly_detection)]     
 *Robin Tibor Schirrmeister, Yuxuan Zhou, Tonio Ball, Dan Zhang*  
 > - **Problem**: Deep generative networks trained via maximum likelihood on one image dataset often assign high likelihood on images from another datasets.   
@@ -24,20 +28,13 @@ A common findings from those papers – some anomaly detection models can assign
 > The authors also provide additional experiments to disentagle the impact of **low-level features** (*e.g.* texture) and **high-level features** (*e.g.* semantics) in differentiating outliers. 
 <br>
 
-**Energy-based Out-of-distribution Detection** [[abs](https://arxiv.org/abs/2010.03759)][[pdf](https://arxiv.org/pdf/2010.03759.pdf)]    
-*Weitang Liu, Xiaoyun Wang, John D. Owens, Yixuan Li*  
-> - **Problem**: Traditional OOD detection methods relying on the **softmax confidence score** suffer from **overconfident posterior distributions** for OOD data.  
-> - **Explanation**: The softmax confidence score often do not align with the underlying probability density.
-> - **Mitigating Strategy**: The paper proposes a unified framework for OOD detection that uses an **energy score**.
->   - *Energy scores* are theoretically aligned with the *probability density*, thus are less susceptible to the overconfidence issue.
-<br>
-
 **Likelihood Regret: An Out-of-Distribution Detection Score For Variational Auto-encoder** [[abs](https://arxiv.org/abs/2003.02977)][[PDF](https://arxiv.org/pdf/2003.02977.pdf)]     
 *Zhisheng Xiao, Qing Yan, Yali Amit*   
 > - **Problem**: 
 >    - Probabilistic generative models can **assign higher likelihoods** on certain types of OOD samples, make the OOD detection rules based on *likelihood threshold* problematic.  
 >    - Some OOD detection methods have been proposed to solve the issue, and this paper found these methods fail on VAEs.  
-> - **Mitigating Strategy**: The paper proposes **Likelihood Regret** as an better OOD scoring function for VAEs.
+> - **Mitigating Strategy**: The paper proposes **Likelihood Regret** as an better OOD scoring function for VAEs.  
+> - **Relevant papers**: [Input Complexity and Out-of-distribution Detection with Likelihood-based Generative Models](https://openreview.net/forum?id=SyxIWpVYvr) (which claims that generative models are biased towards low-complexity inputs).
 <br>
 
 **Why Normalizing Flows Fail to Detect Out-of-Distribution Data** [[abs](https://arxiv.org/abs/2006.08545)][[pdf](https://arxiv.org/pdf/2006.08545.pdf)][[code](https://github.com/PolinaKirichenko/flows_ood)][[thread](https://twitter.com/polkirichenko/status/1272715634544119809)]    
@@ -47,21 +44,31 @@ A common findings from those papers – some anomaly detection models can assign
 > - **Mitigating Strategy**: The papers shows that modifying the flow *coupling layers* can *bias* the flow towards learning the *semantic structure* of the target data.
 <br>
 
+**Energy-based Out-of-distribution Detection** [[abs](https://arxiv.org/abs/2010.03759)][[pdf](https://arxiv.org/pdf/2010.03759.pdf)]    
+*Weitang Liu, Xiaoyun Wang, John D. Owens, Yixuan Li*  
+> - **Problem**: Traditional OOD detection methods relying on the **softmax confidence score** suffer from **overconfident posterior distributions** for OOD data.  
+> - **Explanation**: The softmax confidence score often do not align with the underlying probability density.
+> - **Mitigating Strategy**: The paper proposes a unified framework for OOD detection that uses an **energy score**.
+>   - *Energy scores* are theoretically aligned with the *probability density*, thus are less susceptible to the overconfidence issue.
+<br>
+
+## 2. Study on Supervision
 **CSI: Novelty Detection via Contrastive Learning on Distributionally Shifted Instances** [[abs](https://arxiv.org/abs/2007.08176)][[pdf](https://arxiv.org/pdf/2007.08176.pdf)]     
 *Jihoon Tack, Sangwoo Mo, Jongheon Jeong, Jinwoo Shin*   
 > A method using self-supervision (considering transformed normal data as abnormal data, then do classification) on anomaly detection.
 <br>
 
+**Rethinking the Value of Labels for Improving Class-Imbalanced Learning** [[website](https://www.mit.edu/~yuzhe/imbalanced-semi-self.html)][[abs](https://arxiv.org/abs/2006.07529)][[pdf](https://arxiv.org/pdf/2006.07529)][[code](https://github.com/YyzHarry/imbalanced-semi-self)][[video](http://www.youtube.com/watch?v=XltXZ3OZvyI)][[zhihu-illustration-1](https://zhuanlan.zhihu.com/p/265326764)][[zhihu-illustration-2](https://zhuanlan.zhihu.com/p/259710601)]      
+*Yuzhe Yang, Zhi Xu*   
+<br>
+
+## 3. Miscellaneous
 **Timeseries Anomaly Detection using Temporal Hierarchical One-Class Network**       
 *Lifeng Shen, Zhuocong Li, James Kwok*    
 <br>
 
 **Certifiably Adversarially Robust Detection of Out-of-Distribution Data**      
 *Julian Bitterwolf, Alexander Meinke, Matthias Hein*  
-<br>
-
-**Rethinking the Value of Labels for Improving Class-Imbalanced Learning** [[website](https://www.mit.edu/~yuzhe/imbalanced-semi-self.html)][[abs](https://arxiv.org/abs/2006.07529)][[pdf](https://arxiv.org/pdf/2006.07529)][[code](https://github.com/YyzHarry/imbalanced-semi-self)][[video](http://www.youtube.com/watch?v=XltXZ3OZvyI)][[zhihu-illustration-1](https://zhuanlan.zhihu.com/p/265326764)][[zhihu-illustration-2](https://zhuanlan.zhihu.com/p/259710601)]      
-*Yuzhe Yang, Zhi Xu*   
 <br>
 
 **One Ring to Rule Them All: Certifiably Robust Geometric Perception with Outliers** [[abs](https://arxiv.org/abs/2006.06769)][[pdf](https://arxiv.org/pdf/2006.06769)]    
