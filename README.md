@@ -67,7 +67,7 @@ A common findings from those papers – some anomaly detection models can assign
 *Heng Yang, Luca Carlone*   
 <br>
 
-(This one is not in NIPS'2020 accepted papers but looks interesting.)
+(This one is not in NIPS'2020 accepted papers but looks interesting.)   
 **Provable Worst Case Guarantees for the Detection of Out-of-Distribution Data** [[abs](https://arxiv.org/abs/2007.08473)][[pdf](https://arxiv.org/pdf/2007.08473)]   
 *Julian Bitterwolf, Alexander Meinke, Matthias Hein*   
 <br>
