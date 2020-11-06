@@ -1,10 +1,12 @@
 # NIPS-2020-Paper-on-Anomaly-Detection
 A list of all papers related to anomaly detection in NeurIPS 2020.  
 
-A common finding from those papers – some anomaly detection models can assign low anomaly scores to (thus bias the detection performance on) certain anomalies (e.g. anomalies that the models haven't been trained on).   
+A common finding from those papers – some anomaly detection models can assign low anomaly scores to (thus bias the detection performance on) certain anomalies (*e.g.* anomalies that the models haven't been trained on).   
 
 Common explanations:
-is that the features learned by such models are often *low-level* while the aforementioned anomalies often differ from normal data on *high-level*.
+- Generative models are biased towards **low-complexity inputs** (which have higher likelihoods);
+- Some network structures (*e.g.* CNN) are biased towards **low-level features**, thus cannot discriminate anomalies with just difference on high-level features.
+- The **typical sets** and **high-density regions** of some models may not coincide.
 
 ## 1. Study of Performance Bias
 **Understanding Anomaly Detection with Deep Invertible Networks through Hierarchies of Distributions and Features** [[abs](https://arxiv.org/abs/2006.10848)][[pdf](https://arxiv.org/pdf/2006.10848.pdf)][[code](https://github.com/boschresearch/hierarchical_anomaly_detection)]     
