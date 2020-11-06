@@ -11,7 +11,8 @@ A common findings from those papers – some anomaly detection models can assign
 >   - Thus, when the discriminative features between inliers and outliers are on *high-level* (e.g. shape), anomaly detection becomes challenging.  
 > - **Mitigating Strategy**: 
 >   - Method 1: Using the log likelihood ratios of two identical models, one trained on the in-distribution data and the other one on a more general distribution of images; Also, deriving a new outlier loss for the first network on samples from the general distribution.
->   - Method 2: Using a Glow-like model to discriminate by *high-level features* by using only the likelihood contribution of the final scale. (*p.s.* for me it seems that this will not work on those "hard anomalies"; specifically, there could be low-level anomalies and high-level anomalies, and the following paper addresses this issue.).
+>   - Method 2: Using a Glow-like model to discriminate by *high-level features* by using only the likelihood contribution of the final scale. (*p.s.* for me it seems that this will not work on those "hard anomalies"; specifically, there could be low-level anomalies and high-level anomalies, and the following paper addresses this issue.).  
+> **Relevant papers**: [Do Deep Generative Models Know What They Don't Know?](https://openreview.net/forum?id=H1xwNhCcYm).
 <br>
 
 **Further Analysis of Outlier Detection with Deep Generative Models** [[abs](https://arxiv.org/abs/2010.13064)][[pdf](https://arxiv.org/pdf/2010.13064.pdf)]    
