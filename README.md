@@ -54,6 +54,11 @@ Common explanations:
 >   - *Energy scores* are theoretically aligned with the *probability density*, thus are less susceptible to the overconfidence issue.
 <br>
 
+**Perfect density models cannot guarantee anomaly detection** [[abs](https://arxiv.org/abs/2012.03808v1)]    
+*Charline Le Lan, Laurent Dinh*   
+<br>
+
+
 ## 2. Study on Supervision
 **CSI: Novelty Detection via Contrastive Learning on Distributionally Shifted Instances** [[abs](https://arxiv.org/abs/2007.08176)][[pdf](https://arxiv.org/pdf/2007.08176.pdf)]     
 *Jihoon Tack, Sangwoo Mo, Jongheon Jeong, Jinwoo Shin*   
