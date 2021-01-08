@@ -82,6 +82,11 @@ Common explanations:
 *Heng Yang, Luca Carlone*   
 <br>
 
+(The following is a workshop one.)  
+**Towards Maximizing the Representation Gap between In-Domain & Out-of-Distribution Examples** [[abs](http://arxiv.org/abs/2010.10474v2)]     
+*Jay Nandy, Wynne Hsu, Mong Li Lee*   
+<br>
+
 (This one is not in NIPS'2020 accepted papers but looks interesting.)   
 **Provable Worst Case Guarantees for the Detection of Out-of-Distribution Data** [[abs](https://arxiv.org/abs/2007.08473)][[pdf](https://arxiv.org/pdf/2007.08473)]   
 *Julian Bitterwolf, Alexander Meinke, Matthias Hein*   
