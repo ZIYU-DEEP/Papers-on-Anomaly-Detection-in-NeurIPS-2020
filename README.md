@@ -1,5 +1,5 @@
 # NIPS-2020-Paper-on-Anomaly-Detection
-A list of all papers related to anomaly detection in NeurIPS 2020.  
+A list of all papers related to anomaly detection in NeurIPS 2020. The relevant list of AAAI '21 is available at this repository: [AAAI 2021 Paper List of Anomaly Detection](https://github.com/ZIYU-DEEP/AAAI-2021-Paper-List-of-Anomaly-Detection). 
 
 A common finding from those papers – some anomaly detection models can assign low anomaly scores to (thus bias the detection performance on) certain anomalies (*e.g.* anomalies that the models haven't been trained on).   
 
